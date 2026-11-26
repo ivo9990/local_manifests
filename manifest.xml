@@ -12,4 +12,12 @@
   <project path="device/xiaomi/muyu" name="ivo9990/android_device_xiaomi_muyu" remote="github" revision="lineage-24.0" />
   <project path="device/xiaomi/muyu-kernel" name="ivo9990/android_device_xiaomi_muyu-kernel" remote="github" revision="lineage-24.0" />
   <project path="vendor/xiaomi/muyu" name="ivo9990/android_vendor_xiaomi_muyu" remote="github" revision="lineage-24.0" />
+
+  <!-- Overrides with muyu fixes -->
+  <!-- thermal-hal: map soc_id 642 (cliffsp) to the cliffs sensor configs -->
+  <remove-project name="LineageOS/android_hardware_qcom_thermal" />
+  <project path="hardware/qcom-caf/thermal" name="ivo9990/android_hardware_qcom_thermal" remote="github" revision="lineage-24.0" groups="kaanapali-vendor,qcom" />
+  <!-- Evolver: fix the power menu settings crash on Wi-Fi-only devices -->
+  <remove-project name="packages_apps_Evolver" />
+  <project path="packages/apps/Evolver" name="ivo9990/packages_apps_Evolver" remote="github" revision="cnb" />
 </manifest>
